@@ -53,7 +53,7 @@ abstract class Database_Migration {
 	 * @throws Exception If table name not defiend.
 	 */
 	public function __construct() {
-		$this->schema    = new Schema( $this->table_name, array( $this, 'schema' ) );
+		$this->schema    = new Schema( $this->get_table_name(), array( $this, 'schema' ) );
 		$this->seed_data = $this->seed( array() );
 	}
 
